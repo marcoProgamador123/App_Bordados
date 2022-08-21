@@ -6,7 +6,7 @@ export default class OrdersScreen extends Component{
         return(
             <View style={styles.container}>
                 <Text style={styles.text}>
-                    Pedidos
+                    Pedidos 2
                 </Text>
             </View>
         )

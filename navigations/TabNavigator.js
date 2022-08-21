@@ -6,6 +6,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 
 import HomeScreen from "../screens/HomeScreen";
 import OrdersScreen from "../screens/OrdersScreen";
+import CreateOrderScreen from "../screens/CreateOrder";
 
 
 
@@ -35,7 +36,7 @@ export default class TabNavigator extends Component {
                 />
 
                 <Tab.Screen
-                    name="Order" component={OrdersScreen}
+                    name="Order" component={CreateOrderScreen}
                 />
             </Tab.Navigator>
         )

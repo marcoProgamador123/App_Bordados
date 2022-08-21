@@ -19,6 +19,7 @@ export default class EmbroideryList extends Component{
         super(props);
         this.state = {
           embroiderys: [],
+          tipo:this.props.route.params.tipo
         };
       }
     
@@ -30,12 +31,12 @@ export default class EmbroideryList extends Component{
     //função para coletar 10 transações no banco de dados
     getEmbroidered = () => {
         let embroiderys = []
-        var tipo = this.props.navigation.getParam("tipo")
-        console.log(tipo)
+        var {tipo} = this.state
       db.collection("bordados")
             .where("tipo_bordado","==",tipo)
             .get()
             .then(snapshot => {
+              console.log(snapshot)
                 snapshot.docs.map(doc => {
                     embroiderys.push(doc.data())
                 });

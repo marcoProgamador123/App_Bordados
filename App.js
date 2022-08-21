@@ -20,6 +20,7 @@ export default class App extends React.Component {
           <Stack.Screen name="details" component={DetailsScreen} />
           <Stack.Screen  name="CreateOrders" component={CreateOrderScreen} />
           <Stack.Screen name="embroidered" component={EmbroideryList}/>
+          <Stack.Screen name="orders" component={OrdersScreen}/>
         </Stack.Navigator>
       </NavigationContainer>
 

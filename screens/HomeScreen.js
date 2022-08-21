@@ -23,7 +23,7 @@ export default class HomeScreen extends Component {
   render() {
     return (
      <View style={styles.container}>  
-      
+      <SafeAreaView style={styles.droidSafeArea} />
       <View style={styles.appTitleTextContainer}>
         <Text style={styles.appTitleText}>
         {` Seja \n Bem-Vindo`}
@@ -33,10 +33,10 @@ export default class HomeScreen extends Component {
     <View style={styles.cardContainer}>
       <TouchableOpacity onPress={()=>this.goToLists("biriba")}
         style={styles.routeCards}
-      >
-        <Text style={styles.routeText}>
+      > 
+         <Text style={styles.routeText}>
           Biriba
-        </Text>
+        </Text> 
       </TouchableOpacity>
 
       <TouchableOpacity onPress={()=>this.goToLists("medalha")}
@@ -135,25 +135,26 @@ const styles = StyleSheet.create({
     margin:RFValue(10),
     marginTop:RFValue(10),
     backgroundColor: "white",
-    borderRadius: RFValue(20),
-    borderColor:"#2f345d",
+    borderRadius: RFValue(35),
+    borderColor:"black",
     padding: RFValue(20),
     flexDirection: "row",
     width: RFValue(150),
     height: RFValue(150),
-    borderWidth:6,
+    borderWidth:5,
 },
   routeCards2:{
     margin: RFValue(14),
     marginLeft: RFValue(190),
     margin:RFValue(-160),
     backgroundColor: "white",
-    borderRadius: RFValue(20),
-    borderColor:"#2f345d",
+    borderRadius: RFValue(35),
+    borderColor:"black",
     padding: RFValue(20),
     flexDirection: "row",
     width: RFValue(150),
     height: RFValue(150),
+    borderWidth:5,
     
 },
   routeText:{
