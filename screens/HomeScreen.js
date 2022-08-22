@@ -29,6 +29,11 @@ export default class HomeScreen extends Component {
         {` Seja \n Bem-Vindo`}
         </Text>
       </View>
+      <View style={styles.appTextContainer}>
+        <Text style={styles.text}>
+        {` Com o que \n Vamos trabalhar hoje ?`}
+        </Text>
+      </View>
       
     <View style={styles.cardContainer}>
       <TouchableOpacity onPress={()=>this.goToLists("biriba")}
@@ -70,11 +75,18 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#0742a8"
+    backgroundColor: "#3065c7"
   },
-  containerLight: {
-    flex: 1,
-    backgroundColor: "white"
+  text: {
+    flex: 0.69,
+    color: "white",
+    fontSize: RFValue(28),
+    fontWeight:"bold"
+  },
+  appTextContainer:{
+    flex: 0.2,
+    justifyContent: "center",
+    alignItems: "center"
   },
   droidSafeArea: {
     marginTop: Platform.OS === "android" ? StatusBar.currentHeight : RFValue(35)
@@ -112,7 +124,7 @@ const styles = StyleSheet.create({
   },
   cardContainer: {
     flex:1,
-    top:RFValue(140)
+    top:RFValue(100)
     
   },
   noStories: {
