@@ -5,8 +5,8 @@ import Ionicons from "react-native-vector-icons/Ionicons"
 import { RFValue } from "react-native-responsive-fontsize";
 
 import HomeScreen from "../screens/HomeScreen";
-import OrdersScreen from "../screens/OrdersScreen";
-import CreateOrderScreen from "../screens/CreateOrder";
+import OrderScreen from "../screens/Orders";
+import CreateOrders from "../screens/CreateOrders";
 
 
 
@@ -36,7 +36,7 @@ export default class TabNavigator extends Component {
                 />
 
                 <Tab.Screen
-                    name="Order" component={CreateOrderScreen}
+                    name="Order" component={OrderScreen}
                 />
             </Tab.Navigator>
         )

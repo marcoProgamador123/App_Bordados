@@ -17,55 +17,62 @@ export default class EmbroideredCard extends Component {
     this.state = {
       embroidered_id: this.props.embroidered.key,
       embroidered_data: this.props.embroidered.value,
+
     };
   }
 
   render() {
     let embroidered = this.props.embroidered
+    
+    let images = {
+       'brasao01': require("../assets/brasao01.png"),
+       'brasao02': require("../assets/brasao02.png"),
+       'brasao03': require("../assets/brasao03.png"),
+       'brasao05': require("../assets/brasao05.png"),
+       'biriba01': require("../assets/biriba01.png"),
+       'biriba02': require("../assets/biriba02.png"),
+       'biriba03': require("../assets/biriba03.png"),
+       'medalha01': require("../assets/medalha01.png"),
+       'medalha02': require("../assets/medalha02.png"),
+       'medalha03': require("../assets/medalha03.png"),
+       'medalha04': require("../assets/medalha04.png"),
+       
+     };
     return (
-      // <TouchableOpacity
-      //   style={styles.container}
-      //  onPress={() =>
-      //    this.props.navigation.navigate("RequestScreen", {
-      //     embroidered: this.state.embroidered_data,
-      //      embroidered_id: this.state.embroidered_id
-      //    })
-      //  }
-      // >
-        <View style={styles.cardContainer}>
-          <View style={styles.imageContainer}>
-            <Image
-              source={require("../assets/CORONEL-FABIO.png")}
-              style={styles.storyImage}
-            ></Image>
-            
-          </View>
+      <View style={styles.cardContainer}>
+        <View style={styles.imageContainer}>
+           <Image
+            source={images[embroidered.imagem_bordado]}
+            style={styles.storyImage}
+          ></Image> 
 
-          <View style={styles.titleTextContainer}>
-            <View style={styles.titleContainer}>
-              <Text style={styles.embroideredTypeText}>
-                 {embroidered.tipo_bordado}
-              </Text>
-            </View>
-            <View style={styles.descriptionContainer}>
-              <Text style={styles.embroideredIdText}>
-                ID: {embroidered.id_bordado}
-              </Text>
-              <Text style={styles.embroideredValorText}>
-                Valor: {embroidered.valor}$$$
-              </Text>
-            </View>
-            <TouchableOpacity style={styles.routeCards} 
-           
-            onPress={() =>
-              this.props.navigation.navigate("orders",)
-        } >
-              <Text style={styles.routeText}>
-                Fazer Pedido
-              </Text>
-          </TouchableOpacity>
-          </View>
         </View>
+
+        <View style={styles.titleTextContainer}>
+          <View style={styles.titleContainer}>
+            <Text style={styles.embroideredTypeText}>
+              {embroidered.tipo_bordado}
+            </Text>
+          </View>
+          <View style={styles.descriptionContainer}>
+            <Text style={styles.embroideredIdText}>
+              ID: {embroidered.id_bordado}
+            </Text>
+            <Text style={styles.embroideredValorText}>
+              Valor: {embroidered.valor}$$$
+            </Text>
+          </View>
+          <TouchableOpacity style={styles.routeCards}
+
+            onPress={() =>
+              this.props.navigation.navigate("createOrders", { item_id: embroidered.id_bordado, item_valor: embroidered.valor })
+            } >
+            <Text style={styles.routeText}>
+              Fazer Pedido
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     )
   }
 
@@ -100,7 +107,7 @@ const styles = StyleSheet.create({
   },
   titleTextContainer: {
     flex: 0.8,
-    marginLeft:RFValue(10)
+    marginLeft: RFValue(10)
   },
   iconContainer: {
     flex: 0.2
@@ -122,29 +129,29 @@ const styles = StyleSheet.create({
     fontSize: RFValue(18),
     color: "white"
   },
-  routeCards:{
+  routeCards: {
     margin: RFValue(14),
     marginLeft: RFValue(115),
-    marginTop:RFValue(-60),
+    marginTop: RFValue(-60),
     backgroundColor: "#59b5eb",
     borderRadius: RFValue(35),
-    borderColor:"black",
+    borderColor: "black",
     padding: RFValue(20),
     flexDirection: "row",
     width: RFValue(190),
     height: RFValue(80),
-    borderWidth:5,
-},
+    borderWidth: 5,
+  },
 
-routeText:{
-  fontWeight:"bold",
-  fontSize:25,
-  color:"black",
-  //marginTop:35,
-  //paddingLeft:30,
-  alignSelf:"center",
-  
-},
+  routeText: {
+    fontWeight: "bold",
+    fontSize: 25,
+    color: "black",
+    //marginTop:35,
+    //paddingLeft:30,
+    alignSelf: "center",
+
+  },
 
   actionContainer: {
     justifyContent: "center",
