@@ -29,7 +29,7 @@ export default class TabNavigator extends Component {
                         return <Ionicons name={iconName} size={RFValue(25)} color={color} style={styles.icons} />
                     }
                 })}
-                activeColor={"#19d9ff"}
+                activeColor={"#e8dd46"}
                 inactiveColor={"#aab0b3"}>
                 <Tab.Screen
                     name="Home" component={HomeScreen}
@@ -44,7 +44,7 @@ export default class TabNavigator extends Component {
 }
 const styles = StyleSheet.create({
     bottomTabStyle: {
-        backgroundColor: "#1f6091",
+        backgroundColor: "#344547",
         height: "8%",
         borderTopLeftRadius: RFValue(30),
         borderTopRightRadius: RFValue(30),

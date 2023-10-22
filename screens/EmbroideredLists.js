@@ -36,10 +36,12 @@ export default class EmbroideryList extends Component{
             .where("tipo_bordado","==",tipo)
             .get()
             .then(snapshot => {
-              console.log(snapshot)
+              
                 snapshot.docs.map(doc => {
+                  //console.log(doc.data())
                     embroiderys.push(doc.data())
                 });
+                //console.log(embroiderys[0])
                 this.setState({
                   embroiderys:embroiderys
                 })
@@ -47,8 +49,9 @@ export default class EmbroideryList extends Component{
             
     };
 
-      renderItem = ({ item: embroidered }) => {
-        return <EmbroideredCard embroidered={embroidered} navigation={this.props.navigation} />;
+      renderItem = ({ item }) => {
+        //console.log(item.valor)
+        return <EmbroideredCard embroidered={item} navigation={this.props.navigation} />;
       };
     
       keyExtractor = (item, index) => index.toString();
@@ -89,7 +92,8 @@ export default class EmbroideryList extends Component{
  const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#2496b5"
+        //backgroundColor: "#2a80db"
+        backgroundColor: "#bf1128"
       },
       containerLight: {
         flex: 1,
@@ -120,9 +124,8 @@ export default class EmbroideryList extends Component{
       appTitleText: {
         flex: 0.85,
         fontWeight:"bold",
-        color: "white",
         fontSize: RFValue(35),
-        color:"#3c4345"
+        color:"black"
     
       },
       appTitleTextLight: {

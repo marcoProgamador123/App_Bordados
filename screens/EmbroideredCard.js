@@ -15,15 +15,12 @@ export default class EmbroideredCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      embroidered_id: this.props.embroidered.key,
-      embroidered_data: this.props.embroidered.value,
-
     };
   }
 
   render() {
     let embroidered = this.props.embroidered
-    
+    //console.log(embroidered.valor)
     let images = {
        'brasao01': require("../assets/brasao01.png"),
        'brasao02': require("../assets/brasao02.png"),
@@ -47,7 +44,6 @@ export default class EmbroideredCard extends Component {
           ></Image> 
 
         </View>
-
         <View style={styles.titleTextContainer}>
           <View style={styles.titleContainer}>
             <Text style={styles.embroideredTypeText}>
@@ -59,13 +55,13 @@ export default class EmbroideredCard extends Component {
               ID: {embroidered.id_bordado}
             </Text>
             <Text style={styles.embroideredValorText}>
-              Valor: {embroidered.valor}$$$
+              Valor: {embroidered.valor}R$
             </Text>
           </View>
           <TouchableOpacity style={styles.routeCards}
 
             onPress={() =>
-              this.props.navigation.navigate("createOrders", { item_id: embroidered.id_bordado, item_valor: embroidered.valor })
+              this.props.navigation.navigate("createOrders", { embroidered:embroidered })
             } >
             <Text style={styles.routeText}>
               Fazer Pedido
@@ -83,7 +79,7 @@ const styles = StyleSheet.create({
   },
   cardContainer: {
     margin: RFValue(13),
-    backgroundColor: "#01518a",
+    backgroundColor: "#344547",
     borderRadius: RFValue(20),
     borderWidth: 5,
     borderColor: "black"
@@ -93,7 +89,7 @@ const styles = StyleSheet.create({
     borderRadius: RFValue(20),
     borderWidth: 5,
     borderColor: "black",
-    backgroundColor: "#385c82"
+    backgroundColor: "#b4cacc"
   },
   storyImage: {
     resizeMode: "contain",
@@ -113,8 +109,8 @@ const styles = StyleSheet.create({
     flex: 0.2
   },
   embroideredTypeText: {
-    fontSize: RFValue(35),
-    color: "#0dd4fc"
+    fontSize: RFValue(33),
+    color: "white",
   },
 
   embroideredIdText: {
@@ -133,22 +129,21 @@ const styles = StyleSheet.create({
     margin: RFValue(14),
     marginLeft: RFValue(115),
     marginTop: RFValue(-60),
-    backgroundColor: "#59b5eb",
+    backgroundColor: "#f0c154",
     borderRadius: RFValue(35),
     borderColor: "black",
     padding: RFValue(20),
     flexDirection: "row",
-    width: RFValue(190),
+    width: RFValue(169),
     height: RFValue(80),
     borderWidth: 5,
+    alignSelf:"center"
   },
 
   routeText: {
     fontWeight: "bold",
-    fontSize: 25,
+    fontSize: 20,
     color: "black",
-    //marginTop:35,
-    //paddingLeft:30,
     alignSelf: "center",
 
   },

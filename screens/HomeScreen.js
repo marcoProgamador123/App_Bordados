@@ -26,14 +26,14 @@ export default class HomeScreen extends Component {
         <SafeAreaView style={styles.droidSafeArea} />
         <View style={styles.appTitleTextContainer}>
           <Text style={styles.appTitleText}>
-            {` Seja \n Bem-Vindo`}
+            Bem-Vindo
           </Text>
         </View>
-        <View style={styles.appTextContainer}>
+        {/* <View style={styles.appTextContainer}>
           <Text style={styles.text}>
             {` Com o que \n Vamos trabalhar hoje ?`}
           </Text>
-        </View>
+        </View> */}
 
         <View style={styles.cardContainer}>
           <TouchableOpacity onPress={() => this.goToLists("biriba")}
@@ -81,11 +81,12 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#3065c7"
+    backgroundColor: "#bf1128"
+    //backgroundColor: "#b0233b"
   },
   text: {
     flex: 0.69,
-    color: "white",
+    color: "#08021a",
     fontSize: RFValue(28),
     fontWeight: "bold"
   },
@@ -112,27 +113,23 @@ const styles = StyleSheet.create({
     resizeMode: "contain"
   },
   appTitleTextContainer: {
-    flex: 0.2,
+    flex: 0.1,
     justifyContent: "center",
     alignItems: "center"
   },
   appTitleText: {
     flex: 0.99,
-    color: "white",
-    fontSize: RFValue(35),
+    color: "#08021a",
+    fontSize: RFValue(45),
     fontWeight: "bold"
-
-  },
-  appTitleTextLight: {
-    color: "black",
-    fontSize: RFValue(28),
 
   },
   cardContainer: {
     flex: 1,
     top: RFValue(100),
     flexDirection: "row",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
+    justifyContent: "center"
 
   },
   noStories: {
@@ -153,14 +150,15 @@ const styles = StyleSheet.create({
     marginLeft: RFValue(15),
     margin: RFValue(10),
     marginTop: RFValue(10),
-    backgroundColor: "white",
-    borderRadius: RFValue(35),
+    backgroundColor: "#b4cacc",
+    //backgroundColor: "#828285",
+    borderRadius: RFValue(25),
     borderColor: "black",
     padding: RFValue(20),
     flexDirection: "column",
     width: RFValue(150),
     height: RFValue(150),
-    borderWidth: 5,
+    borderWidth: 4,
     justifyContent: "center",
     alignItems:"center"
   },

@@ -68,14 +68,14 @@ export default class OrderScreen extends Component {
         return (
             <View style={{ borderWidth: 1 }}>
                 <ListItem.Content>
-                <ListItem>
-                    <ListItem.Title style={styles.title}>
-                        {item.name}
-                    </ListItem.Title>
+                    <ListItem>
+                        <ListItem.Title style={styles.title}>
+                            {item.name}
+                        </ListItem.Title>
                         <ListItem.Subtitle style={styles.subtitle}>
                             {`${item.description}`}
                         </ListItem.Subtitle>
-                </ListItem>
+                    </ListItem>
                 </ListItem.Content>
             </View>
         );
@@ -86,21 +86,12 @@ export default class OrderScreen extends Component {
         const { searchText, AllOrders } = this.state;
         return (
             <View style={styles.container}>
-                <View style={styles.upperContainer}>
-                    <View style={styles.textinputContainer}>
-                        <TextInput
-                            style={styles.textinput}
-                            onChangeText={text => this.setState({ searchText: text })}
-                            placeholder={"Escreva aqui"}
-                            placeholderTextColor={"#FFFFFF"}
-                        />
-                        <TouchableOpacity
-                            style={styles.scanbutton}
-                        >
-                            <Text style={styles.scanbuttonText}>Pesquisa</Text>
-                        </TouchableOpacity>
-                    </View>
+                <View style={styles.appTitleTextContainer}>
+                    <Text style={styles.TitleText}>
+                    {` Seus \n pedidos`}
+                    </Text>
                 </View>
+
                 <View style={styles.lowerContainer}>
                     <FlatList
                         data={AllOrders}
@@ -118,7 +109,7 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        backgroundColor: "#3a6bba",
+        backgroundColor: "#bf1128",
         justifyContent: "center",
         alignItems: "center"
     },
@@ -160,12 +151,12 @@ const styles = StyleSheet.create({
 
     },
     lowerContainer: {
-        flex: 0.8,
+        flex: 0.5,
         backgroundColor: "#FFFFFF",
         alignItems: "stretch",
-        width: 350,
-        borderWidth: 3,
-        borderRadius: 12
+        width: 370,
+        borderWidth: 5,
+        borderRadius: 8
 
 
     },
@@ -192,6 +183,14 @@ const styles = StyleSheet.create({
     date: {
         fontSize: 12,
         paddingTop: 5
-    }
+    },
+    TitleText:{
+        color: "#08021a",
+        fontSize: RFValue(45),
+        fontWeight: "bold"
+    },
+        appTitleTextContainer:{
+            flex:0.3,
+        }
 });
 
