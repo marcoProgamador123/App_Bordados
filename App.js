@@ -1,13 +1,18 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import HomeScreen from "./screens/HomeScreen";
-import OrderScreen from "./screens/Orders";
-import DetailsScreen from "./screens/DetailsScreen";
-import CreateOrders from "./screens/CreateOrders";
-import TabNavigator from "./navigations/TabNavigator";
 import { NavigationContainer } from "@react-navigation/native";
-import EmbroideryList from "./screens/EmbroideredLists";
+import LoginScreen from "./screens/LoginScreen";
+import RegisterScreen from "./screens/RegisterScreen";
+import firebase from "firebase";
+import { firebaseConfig } from "./config";
+import StackNavigator from "./navigations/StackNavigation";
 
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+} else {
+  firebase.app();
+}
 
 const Stack = createStackNavigator()
 
@@ -15,12 +20,10 @@ export default class App extends React.Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="tab" screenOptions={{headerShown:false}}>
-          <Stack.Screen name="tab" component={TabNavigator} />
-          <Stack.Screen name="details" component={DetailsScreen} />
-          <Stack.Screen  name="Orders" component={OrderScreen} />
-          <Stack.Screen name="embroidered" component={EmbroideryList}/>
-          <Stack.Screen name="createOrders" component={CreateOrders}/>
+        <Stack.Navigator initialRouteName="Login" screenOptions={{headerShown:false}}>
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Register" component={RegisterScreen} />
+          <Stack.Screen name="Dashboard" component={StackNavigator} />
         </Stack.Navigator>
       </NavigationContainer>
 
