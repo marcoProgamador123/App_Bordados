@@ -20,11 +20,13 @@ export default class App extends React.Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login" screenOptions={{headerShown:false}}>
-          <Stack.Screen name="Login" component={LoginScreen} />
-          <Stack.Screen name="Register" component={RegisterScreen} />
-          <Stack.Screen name="Dashboard" component={StackNavigator} />
-        </Stack.Navigator>
+        <StackNavigator/>
+        {/* <Stack.Navigator initialRouteName="Dashboard" screenOptions={{headerShown:false}}> */}
+          {/* <Stack.Screen name="Login" component={LoginScreen} /> */}
+          {/* <Stack.Screen name="Register" component={RegisterScreen} /> */}
+          {/* <Stack.Screen name="Dashboard" component={StackNavigator} /> */}
+        {/* </Stack.Navigator> */}
+
       </NavigationContainer>
 
     )
